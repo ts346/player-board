@@ -1,0 +1,58 @@
+:root {
+  --lightItem: #888;
+  --hoverItem: #111;
+}
+
+html,
+body,
+#root,
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  /* background: url("/Polka-Dots.svg"); */
+  /* background: url("/Polka-Dots.svg"); */
+}
+
+.library-item:hover {
+  color: var(--hoverItem);
+}
+.library-item {
+  cursor: pointer;
+  margin-bottom: 7px;
+  color: var(--lightItem);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  color: var(--lightItem);
+}
+
+.adventure-logo {
+  padding: 12px;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
+.player-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 20px 0 0 20px;
+  user-select: none;
+}
+
+.player-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

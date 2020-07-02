@@ -1,0 +1,34 @@
+.audio-tracklist-container {
+  margin-top: 5%;
+}
+
+.audio-tracklist-container > * {
+  margin-bottom: 60px;
+}
+
+.action-link,
+.action-link:hover,
+.library-item:hover {
+  color: var(--hoverItem);
+}
+.library-item {
+  cursor: pointer;
+  margin-bottom: 7px;
+  color: var(--lightItem);
+}
+
+.share-modal-container {
+  width: 400px;
+  height: 300px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.share-modal-textfield-container {
+  display: flex;
+  flex-direction: column;
+}
