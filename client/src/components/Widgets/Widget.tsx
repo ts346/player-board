@@ -5,6 +5,7 @@ import React, { useEffect, useState, useCallback } from "react";
 
 import { useDrag } from "react-dnd";
 import { JokeWidget } from "./JokeWidget";
+import LeaderboardWiidget from "./LeaderboardWidget/LeaderboardWidget";
 
 export interface IWidgetProps {
   type: WidgetTypes;
@@ -43,6 +44,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <WidgetTime />;
     case WidgetTypes.joke:
       return <JokeWidget />;
+    case WidgetTypes.leaderboard:
+      return <LeaderboardWiidget />;
     // add widget case here for new widget types
     default:
       return null;
