@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { Button, Drawer } from "@material-ui/core";
-import { useDrop, XYCoord } from "react-dnd";
-import { WidgetTypes, ItemTypes, DragItem } from "../types";
+import { DragItem, ItemTypes, WidgetTypes } from "../types";
 import { IWidgetProps, Widget } from "./Widgets/Widget";
+import React, { useEffect, useState } from "react";
+import { XYCoord, useDrop } from "react-dnd";
+
 import { AdventureLogo } from "./AdventureLogo";
 import { WidgetButton } from "./WidgetButton";
 import update from "immutability-helper";
@@ -51,20 +52,17 @@ export const Board: React.FC = () => {
   const renderDrawerContent = () => {
     if (drawerType === drawerTypes.widgets) {
       return (
-        <div>
-          <div
-            className="library-item"
-            onClick={onClickWidgetItem(WidgetTypes.time)}
-          >
-            time
-          </div>
-          <div
-            className="library-item"
-            onClick={onClickWidgetItem(WidgetTypes.joke)}
-          >
-            joke
-          </div>
-        </div>
+        <>
+          {Object.values(WidgetTypes).map((widget) => (
+            <div
+              key={widget}
+              className="library-item"
+              onClick={onClickWidgetItem(widget)}
+            >
+              {widget}
+            </div>
+          ))}
+        </>
       );
     }
   };
