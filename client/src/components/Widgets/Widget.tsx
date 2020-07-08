@@ -1,10 +1,10 @@
 import "../css/Widget.css";
 
 import { ItemTypes, WidgetTypes } from "../../types";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useDrag } from "react-dnd";
 import { JokeWidget } from "./JokeWidget";
+import { useDrag } from "react-dnd";
 
 export interface IWidgetProps {
   type: WidgetTypes;
