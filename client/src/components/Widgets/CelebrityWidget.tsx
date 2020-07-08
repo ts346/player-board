@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import clock from './images/clock.png';
 declare const window: any;
 //Celebrity Widget
 //Celebrity Image
@@ -7,11 +8,11 @@ export const CelebrityWidget = () =>{
     //Image states
     const [optionValue, setOptionValue] = useState('kanye')
     const [itemIndex, setItemIndex] = useState(0)
-    const [items] = useState([
+    const items = [
       { label: "kanye",value: require('./images/Kanye.png')},
       { label: "lebron", value: require('./images/Lebron.png')},
       { label: "the rock", value: require('./images/Rock.png')},
-    ]);
+    ];
     //Time state
     const [time, setTime] = useState("");
     //Token states
@@ -53,24 +54,18 @@ export const CelebrityWidget = () =>{
                 console.log(error);
             });
   }
-  const clickButton = () =>{
-    setTimeout(function(){
-      var button = document.getElementById("api")!;
-      button.click();
-    },60000);
-  }
   useEffect(() => {
     setInterval(() => {
       const newTime = getFormattedTime();
       setTime(newTime);
     }, 1000);
     getAccountName();
-    clickButton();
+    setTimeout(sendAPIRequest, 1000);
   }, []);
     return (
       <div id="celebrity" className="default">
         <header>
-          <img className="clock" src="https://cdn3.iconfinder.com/data/icons/ui-set-transparent/64/UI_icon_set_abu-05-512.png" />
+          <img className="clock" src={clock} />
           <h1>{items[itemIndex].label} time</h1>
           <div className="dropdown">
             <select className="dropbutton" value={optionValue} onChange={handleChange}>
@@ -86,7 +81,6 @@ export const CelebrityWidget = () =>{
               The time is <div>{time}</div>
           </div>
           <div>
-          <button id="api" onClick={sendAPIRequest}></button>
         </div>
         </main>
       </div>
