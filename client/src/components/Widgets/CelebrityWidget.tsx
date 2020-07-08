@@ -15,10 +15,8 @@ export const CelebrityWidget = () =>{
     ];
     //Time state
     const [time, setTime] = useState("");
-    //Token states
-    const [accountU, setAccount] = useState(0x00);
     //Image functions
-  const handleChange = (evt: { target: { value: any; }; }) => {
+    const handleChange = (evt: { target: { value: any; }; }) => {
    const newValue = evt.target.value
    setOptionValue(newValue)
    const newItemIndex = items.findIndex(items => items.label === newValue)
@@ -32,19 +30,16 @@ export const CelebrityWidget = () =>{
     ${newDate.getMinutes().toString().padStart(2, "0")}`;
   };
   //Token functions
-  const getAccountName = async () => {
+  const sendAPIRequest = async () => {
     const accounts = await window.ethereum.enable();
-    const account = accounts[0]
-    setAccount(account);
-  }
-  const sendAPIRequest = () => {
+    const account = accounts[0];
     window.alert('A Gift For You'+'\n'+'\n'+'1 RAWR Token');
         var apiAddress;
         apiAddress = "https://adventure-eth-api.herokuapp.com/transfer-token";
         axios.post(apiAddress, {
             ticker: "BEAR",
             amount: 1,
-            to: accountU,
+            to: account,
             hookUrl: "done",
         })
             .then(function (response) {
@@ -59,13 +54,12 @@ export const CelebrityWidget = () =>{
       const newTime = getFormattedTime();
       setTime(newTime);
     }, 1000);
-    getAccountName();
-    setTimeout(sendAPIRequest, 1000);
+    setTimeout(sendAPIRequest, 60000);
   }, []);
     return (
       <div id="celebrity" className="default">
         <header>
-          <img className="clock" src={clock} />
+          <img alt="clock" className="clock" src={clock} />
           <h1>{items[itemIndex].label} time</h1>
           <div className="dropdown">
             <select className="dropbutton" value={optionValue} onChange={handleChange}>
@@ -76,7 +70,7 @@ export const CelebrityWidget = () =>{
           </div>
         </header>
         <main>
-          <img className="image" src={items[itemIndex].value} />
+          <img alt="celebrity picture" className="image" src={items[itemIndex].value} />
           <div className="time">
               The time is <div>{time}</div>
           </div>
