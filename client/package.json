@@ -15,6 +15,7 @@
     "@types/react-dnd-multi-backend": "^6.0.0",
     "@types/react-dom": "^16.9.0",
     "adventure-component-library": "0.0.24",
+    "axios": "^0.19.2",
     "dnd-multi-backend": "^6.0.0",
     "immutability-helper": "^3.0.2",
     "react": "^16.13.1",

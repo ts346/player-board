@@ -1,6 +1,7 @@
 export enum WidgetTypes {
   time = "time",
   joke = "joke",
+  celebrity = "celebrity"
 }
 
 export const ItemTypes = {
