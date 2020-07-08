@@ -1,11 +1,11 @@
 import "../css/Widget.css";
 
 import { ItemTypes, WidgetTypes } from "../../types";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useDrag } from "react-dnd";
-import { JokeWidget } from "./JokeWidget";
 import { CelebrityWidget } from "./CelebrityWidget";
+import { JokeWidget } from "./JokeWidget";
+import { useDrag } from "react-dnd";
 
 export interface IWidgetProps {
   type: WidgetTypes;
@@ -45,7 +45,7 @@ const renderWidget = (type: WidgetTypes) => {
     case WidgetTypes.joke:
       return <JokeWidget />;
     case WidgetTypes.celebrity:
-      return <CelebrityWidget />
+      return <CelebrityWidget />;
     // add widget case here for new widget types
     default:
       return null;
