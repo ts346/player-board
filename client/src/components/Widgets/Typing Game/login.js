@@ -79,7 +79,7 @@ class Login extends React.Component {
             textAlign: "center",
             color: "black",
             cursor: "default", // get rid of the quad arrow cuser
-            width: "300px", // take up the whole widget space
+            width: "400px", // take up the whole widget space
             height: "100%",
           }}
         >

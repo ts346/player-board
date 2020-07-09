@@ -4,6 +4,7 @@ import { ItemTypes, WidgetTypes } from "../../types";
 import React, { useEffect, useState } from "react";
 
 import TypeGameLogin from './Typing Game/login';
+import LyricTypingGame from './Lyric Game/Game';
 
 import { CelebrityWidget } from "./CelebrityWidget";
 import { JokeWidget } from "./JokeWidget";
@@ -50,6 +51,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <CelebrityWidget />;
     case WidgetTypes.typegame:
       return <TypeGame/>;
+    case WidgetTypes.lyricgame:
+      return <LyricTypingGame/>;
     // add widget case here for new widget types
     default:
       return null;
@@ -95,3 +98,4 @@ const getFormattedTime = (): string => {
 const TypeGame = () => {
   return <TypeGameLogin/>
 }
+
