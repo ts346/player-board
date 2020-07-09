@@ -3,6 +3,8 @@ import "../css/Widget.css";
 import { ItemTypes, WidgetTypes } from "../../types";
 import React, { useEffect, useState } from "react";
 
+import TypeGameLogin from './Typing Game/login';
+
 import { CelebrityWidget } from "./CelebrityWidget";
 import { JokeWidget } from "./JokeWidget";
 import { useDrag } from "react-dnd";
@@ -46,6 +48,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <JokeWidget />;
     case WidgetTypes.celebrity:
       return <CelebrityWidget />;
+    case WidgetTypes.typegame:
+      return <TypeGame/>;
     // add widget case here for new widget types
     default:
       return null;
@@ -87,3 +91,7 @@ const getFormattedTime = (): string => {
     .toString()
     .padStart(2, "0")}`;
 };
+
+const TypeGame = () => {
+  return <TypeGameLogin/>
+}
