@@ -31,8 +31,9 @@ const getBalance = (
       cont.decimals((error: object, decimal: number) => {
         // calculate a balance
         balance = balance.div(10 ** decimal);
-        // let output = balance;
-        resolve(balance);
+        let output: string = balance.toString();
+        // console.log(balance);
+        resolve(output);
       });
     });
   });

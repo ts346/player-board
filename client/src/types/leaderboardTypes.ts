@@ -2,7 +2,7 @@ interface data {
   ticker: string;
   address: string;
   link: string;
-  balance: number;
+  balance: string;
 }
 
 export enum tokens {
@@ -15,13 +15,10 @@ export type tokenDataObj = {
   [token: number]: data;
 };
 
-export interface tokenData {
-  [token: string]: number;
-}
-
 export type dataTableProps = {
   address: string;
-  tokenData: tokenDataObj;
+  setAddress: React.Dispatch<React.SetStateAction<string>>;
+  tokenBalance: string[];
 };
 
 export type metamaskProps = {
