@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "https://yeestudio.net/static/css/main.b6197070.chunk.css",
+    "main.js": "https://yeestudio.net/static/js/main.f27c032c.chunk.js",
+    "main.js.map": "https://yeestudio.net/static/js/main.f27c032c.chunk.js.map",
+    "runtime-main.js": "https://yeestudio.net/static/js/runtime-main.f636b0d3.js",
+    "runtime-main.js.map": "https://yeestudio.net/static/js/runtime-main.f636b0d3.js.map",
+    "static/js/2.5d2a8c55.chunk.js": "https://yeestudio.net/static/js/2.5d2a8c55.chunk.js",
+    "static/js/2.5d2a8c55.chunk.js.map": "https://yeestudio.net/static/js/2.5d2a8c55.chunk.js.map",
+    "index.html": "https://yeestudio.net/index.html",
+    "precache-manifest.5a97c8dead5895a5d5f3c2fe64ca412a.js": "https://yeestudio.net/precache-manifest.5a97c8dead5895a5d5f3c2fe64ca412a.js",
+    "service-worker.js": "https://yeestudio.net/service-worker.js",
+    "static/css/main.b6197070.chunk.css.map": "https://yeestudio.net/static/css/main.b6197070.chunk.css.map",
+    "static/js/2.5d2a8c55.chunk.js.LICENSE.txt": "https://yeestudio.net/static/js/2.5d2a8c55.chunk.js.LICENSE.txt",
+    "static/media/Kanye.png": "https://yeestudio.net/static/media/Kanye.ce4d6243.png",
+    "static/media/Lebron.png": "https://yeestudio.net/static/media/Lebron.00f1fde3.png",
+    "static/media/Polka-Dots.svg": "https://yeestudio.net/static/media/Polka-Dots.72456503.svg",
+    "static/media/Rock.png": "https://yeestudio.net/static/media/Rock.625afa09.png",
+    "static/media/clock.png": "https://yeestudio.net/static/media/clock.116ab4b1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f636b0d3.js",
+    "static/js/2.5d2a8c55.chunk.js",
+    "static/css/main.b6197070.chunk.css",
+    "static/js/main.f27c032c.chunk.js"
+  ]
+}
