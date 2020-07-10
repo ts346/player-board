@@ -1,12 +1,8 @@
 import React from 'react';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { Tooltip, Button } from "@material-ui/core";
+import { Tooltip } from "@material-ui/core";
 
 import './lyricGame.css';
 

@@ -9,7 +9,7 @@ import Leaderboard from "./leaderboard";
 
 //import axios from "axios";
 
-let durationInMinutes;
+
 
 const initalWords = generatePhrase();
 
@@ -28,7 +28,7 @@ function Game(props) {
   const [seconds, setSeconds] = useState(10);
   const [winner, setWinner] = useState(props.username);
   const [gameTimer, setgameTimer] = useState(0);
-  const [leaderboard, setLeaderboad] = useState([]);
+
   useEffect(() => {
     if (seconds > 0) {
       setTimeout(() => setSeconds(seconds - 1), 1000);
@@ -75,7 +75,7 @@ function Game(props) {
   const [wpm, setWpm] = useState(0);
 
   useKeyPress((key) => {
-    var i = (currentTime() - startTime) / 60000;
+    
 
     if (!startTime) {
       setStartTime(currentTime());
@@ -109,7 +109,7 @@ function Game(props) {
         //
         setWordCount(wordCount + 1);
         //
-        durationInMinutes = (currentTime() - startTime) / 60000.0;
+        
         setWpm((((wordCount + 1) / gameTimer)*60).toFixed(2));
         //
         

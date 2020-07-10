@@ -23,7 +23,7 @@ export const useKeyPress = (callback) => {
     window.addEventListener("keydown", downHandler);
     // stop scroll down when spacebar is pressed ////////
     window.addEventListener("keydown", function (e) {
-      if (e.keyCode == 32 && e.target == document.body) {
+      if (e.keyCode === 32 && e.target === document.body) {
         e.preventDefault();
       }
     });

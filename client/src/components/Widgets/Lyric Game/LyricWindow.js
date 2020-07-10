@@ -15,7 +15,7 @@ function Lyrics (props){
     const [incomingChars, setIncomingChars] = useState(props.lyrics.substr(1));
     const [start, setStart] = useState(false)
     
-    const [seconds, setSeconds] = useState(10);
+
     const [gameTimer, setgameTimer] = useState(0);
     useEffect(() => {
       if(start){
@@ -30,12 +30,11 @@ function Lyrics (props){
       /////// wpm ///////
   const [startTime, setStartTime] = useState();
   const [wordCount, setWordCount] = useState(0);
-  const [wpm, setWpm] = useState(0);
+
   
 
   useKeyPress((key) => {
     setStart(true);
-    var i = (currentTime() - startTime) / 60000;
 
     if (!startTime) {
       setStartTime(currentTime());

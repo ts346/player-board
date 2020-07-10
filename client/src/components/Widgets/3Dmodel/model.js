@@ -1,14 +1,11 @@
 import "./model.css";
 
-import * as THREE from "three";
-
-import { Canvas, useFrame, useLoader, useThree } from "react-three-fiber";
+import { Canvas, useLoader, useThree } from "react-three-fiber";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 
 import Coin from "./coin.gif";
 import CoinSound from "./coin.mp3";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import Modal from "@material-ui/core/Modal";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import UIfx from "uifx";
 import Web3 from "web3";
@@ -49,10 +46,10 @@ function Box(props) {
   );
 }
 
-function Car(props) {
+function Car() {
   const ref = useRef();
 
-  console.log(window.location.pathname.split("/"));
+  
   const { scene } = useLoader(
     GLTFLoader,
     process.env.PUBLIC_URL + "/scene.gltf"
