@@ -4,7 +4,7 @@
   "scripts": {
     "pre-commit": "lint-staged",
     "postinstall": "cd client && npm install",
-    "build": "npm run build --prefix client"
+    "build": "PUBLIC_URL=https://yeestudio.net npm run build --prefix client"
   },
   "pre-commit": [
     "pre-commit"

@@ -9,6 +9,7 @@ import Model from './3Dmodel/model';
 
 import { CelebrityWidget } from "./CelebrityWidget";
 import { JokeWidget } from "./JokeWidget";
+import LeaderboardWidget from "./LeaderboardWidget/LeaderboardWidget";
 import { useDrag } from "react-dnd";
 
 export interface IWidgetProps {
@@ -48,6 +49,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <WidgetTime />;
     case WidgetTypes.joke:
       return <JokeWidget />;
+    case WidgetTypes.leaderboard:
+      return <LeaderboardWidget />;
     case WidgetTypes.celebrity:
       return <CelebrityWidget />;
     case WidgetTypes.typegame:
