@@ -3,7 +3,8 @@ export enum WidgetTypes {
   joke = "joke",
   celebrity = "celebrity",
   typegame = "multiplayer typing game",
-  lyricgame = "lyric game"
+  lyricgame = "lyric game",
+  graphicmodel = "3D model"
 }
 
 export const ItemTypes = {

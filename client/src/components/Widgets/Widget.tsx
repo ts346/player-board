@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 
 import TypeGameLogin from './Typing Game/login';
 import LyricTypingGame from './Lyric Game/Game';
+import Model from './3Dmodel/model';
 
 import { CelebrityWidget } from "./CelebrityWidget";
 import { JokeWidget } from "./JokeWidget";
@@ -53,6 +54,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <TypeGame/>;
     case WidgetTypes.lyricgame:
       return <LyricTypingGame/>;
+    case WidgetTypes.graphicmodel:
+      return <Model/>;
     // add widget case here for new widget types
     default:
       return null;
