@@ -1,41 +1,53 @@
+.faucet-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  position: absolute;
+  cursor: move;
+  border: 1px solid black;
+  background-color: white;
+  min-height: 400px;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132),
+    0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+}
 
 .topleft_faucet {
     position: relative;
-    right: 60px;
+    right: 145px;
     top: 2px;
 }
 
 .topright_faucet {
     position: relative;
-    left: 60px;
+    left: 145px;
 }
 .header_faucet {
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-size: 6px;
+    font-size: 18px;
     color: #8B4726 ;
     font-family: "Gill Sans";
 }
 .gif_faucet {
   position: relative;
-  left:40px;
+  left:100px;
 }
 
 
 
 .button_faucet {
   position: relative;
-  top:30px;
-  right:40px;
+  top:50px;
+  right:70px;
   background-color: #8B4726;  
   border: none;
   color: white;
-  padding: 6px 12px;
+  padding: 6px 30px;
   text-align: center;
   text-decoration: none;
-  font-size: 5px;
+  font-size: 15px;
   margin: 8px 4px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -48,6 +60,6 @@
 
 .credits {
   position: relative;
-  top: 30px;
-  left: 80px;
+  top: 70px;
+  left: 140px;
 }

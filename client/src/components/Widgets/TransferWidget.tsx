@@ -64,12 +64,12 @@ export const TransferWidget = () => {
   
       return <div className='transfer-container'>
       
-      <div className='header_faucet'>
+      <div className='header_transfer'>
   
       <img className="topright_transfer" onClick={connectMetamask} src={fox} style={{width: '30px', height: '30px'}}></img>
       <h1> token shipper </h1>
       <p>connected with: {account}</p>
-      <img className="gif_transfer" src={ship} style={{width: '100px', height: '100px'}}></img>
+      <img className="gif_transfer" src={ship} style={{width: '150px', height: '150px'}}></img>
       <label className="text_box-transfer">
       <input type="text" name="to" value={to} onChange={handleChange}/>
     </label>

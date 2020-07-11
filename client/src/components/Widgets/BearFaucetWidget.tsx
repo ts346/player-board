@@ -65,17 +65,17 @@ export const BearFaucetWidget = () => {
     }
     
     
-    return <div className='header_faucet'>
-  
+    return <div className="faucet-container">
+            <div className='header_faucet'>
               <img className="topleft_faucet" src={bear} style={{width: '30px', height: '30px'}}></img>
               <img className="topright_faucet" onClick={connectMetamask} src={fox} style={{width: '30px', height: '30px'}}></img>
               <h1> 100 rawr tokens </h1>
-              <img className="gif_faucet" src={waves} style={{width: '80px', height: '80px'}}></img>
+              <img className="gif_faucet" src={waves} style={{width: '150px', height: '150px'}}></img>
               <button className="button_faucet" onClick={send_tokens} >request rawr tokens</button>
               <Tooltip title="version 0.1, production: joão, leo, mike">
               <div className='credits' >credits</div>
               </Tooltip>
-              
+              </div>
             </div>
     
   }
