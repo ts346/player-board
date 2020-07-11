@@ -9,8 +9,6 @@ import Leaderboard from "./leaderboard";
 
 //import axios from "axios";
 
-
-
 const initalWords = generatePhrase();
 
 function Game(props) {
@@ -29,6 +27,11 @@ function Game(props) {
   const [winner, setWinner] = useState(props.username);
   const [gameTimer, setgameTimer] = useState(0);
 
+  /////// wpm ///////
+  const [startTime, setStartTime] = useState();
+  const [wordCount, setWordCount] = useState(0);
+  const [wpm, setWpm] = useState(0);
+
   useEffect(() => {
     if (seconds > 0) {
       setTimeout(() => setSeconds(seconds - 1), 1000);
@@ -36,47 +39,34 @@ function Game(props) {
       setSeconds("Start");
     }
 
-    if(seconds === "Start" && gameTimer < 15){
+    if (seconds === "Start" && gameTimer < 15) {
       setTimeout(() => setgameTimer(gameTimer + 1), 1000);
-    }
-    else{
+    } else {
       // props.socket.emit('updateLeaderBoard', {player: winner, wpm: wpm})
     }
 
     var maxWPM = 0;
-    props.socket.on(
-    "getWPM", 
-    function(data){
+    props.socket.on("getWPM", function (data) {
       props.updateWPM(data.player, data.wpm);
-      
-      for(const [key, value] of Object.entries(props.opponents)){
-        
-        if(parseFloat(value) > maxWPM){
+
+      for (const [key, value] of Object.entries(props.opponents)) {
+        if (parseFloat(value) > maxWPM) {
           setWinner(key);
           maxWPM = value;
         }
-        if(parseFloat(wpm) > maxWPM){
-          console.log("Your First!");
+        if (parseFloat(wpm) > maxWPM) {
           setWinner(props.username);
           maxWPM = value;
         }
       }
-  }.bind(this));
+    });
 
-  // props.socket.on('getLeaderboard', function(data){
-  //   setLeaderboad(data.leaderboard);
-  // })
-
-  });
-
-  /////// wpm ///////
-  const [startTime, setStartTime] = useState();
-  const [wordCount, setWordCount] = useState(0);
-  const [wpm, setWpm] = useState(0);
+    // props.socket.on('getLeaderboard', function(data){
+    //   setLeaderboad(data.leaderboard);
+    // })
+  }, [seconds, gameTimer, props, wpm]);
 
   useKeyPress((key) => {
-    
-
     if (!startTime) {
       setStartTime(currentTime());
     }
@@ -109,13 +99,15 @@ function Game(props) {
         //
         setWordCount(wordCount + 1);
         //
-        
-        setWpm((((wordCount + 1) / gameTimer)*60).toFixed(2));
+
+        setWpm((((wordCount + 1) / gameTimer) * 60).toFixed(2));
         //
-        
 
         // props.socket.emit("updateWPM", { username: props.username, wpm: wpm });
-        props.socket.emit('updateWPM', {username: props.username, wpm: (((wordCount + 1) / gameTimer)*60).toFixed(2)});
+        props.socket.emit("updateWPM", {
+          username: props.username,
+          wpm: (((wordCount + 1) / gameTimer) * 60).toFixed(2),
+        });
       }
     }
   });
@@ -147,17 +139,19 @@ function Game(props) {
   }
   */
 
-  function endGame(){
-    props.socket.emit('endgame', {player: props.username});
+  function endGame() {
+    props.socket.emit("endgame", { player: props.username });
     props.resetGame();
   }
 
-  for( const[key, value] of Object.entries(props.opponents)){
+  for (const [key, value] of Object.entries(props.opponents)) {
     listOfOpp.push(
       <div key={key}>
-        <h3>Opponent: {key} WPM: {value}</h3>
+        <h3>
+          Opponent: {key} WPM: {value}
+        </h3>
       </div>
-    )
+    );
   }
 
   if (gameTimer >= 15) {
@@ -169,7 +163,9 @@ function Game(props) {
         <p>WPM: {wpm}</p>
 
         {/*<button onClick={endGame}>End Game</button> */}
-        <button style={{ width: "50%" }} onClick={endGame}>End Game</button>
+        <button style={{ width: "50%" }} onClick={endGame}>
+          End Game
+        </button>
 
         {/* <h1>Winner: {winner}</h1> */}
         <h1>Winner: {winner}</h1>

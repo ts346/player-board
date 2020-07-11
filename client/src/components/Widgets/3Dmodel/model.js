@@ -49,7 +49,6 @@ function Box(props) {
 function Car() {
   const ref = useRef();
 
-  
   const { scene } = useLoader(
     GLTFLoader,
     process.env.PUBLIC_URL + "/scene.gltf"
@@ -144,7 +143,7 @@ class Model extends React.Component {
         </Canvas>
 
         <div style={{ textAlign: "center" }}>
-          <img style={{ width: "20%" }} src={Coin} />
+          <img style={{ width: "20%" }} src={Coin} alt="Coin" />
         </div>
         {!this.state.openModel ? (
           <div style={{ textAlign: "center" }}>
