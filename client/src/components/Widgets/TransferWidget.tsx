@@ -1,6 +1,6 @@
 
 import "../css/TransferWidget.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Tooltip } from "@material-ui/core";
 import {ApiRequests} from "./ApiRequests";
 import fox from "../../assets/metamask_fox.png"
@@ -66,10 +66,10 @@ export const TransferWidget = () => {
       
       <div className='header_transfer'>
   
-      <img className="topright_transfer" onClick={connectMetamask} src={fox} style={{width: '30px', height: '30px'}}></img>
+      <img className="topright_transfer" onClick={connectMetamask} src={fox} style={{width: '30px', height: '30px'}} alt="fox"></img>
       <h1> token shipper </h1>
       <p>connected with: {account}</p>
-      <img className="gif_transfer" src={ship} style={{width: '150px', height: '150px'}}></img>
+      <img className="gif_transfer" src={ship} style={{width: '150px', height: '150px'}} alt="ship"></img>
       <label className="text_box-transfer">
       <input type="text" name="to" value={to} onChange={handleChange}/>
     </label>

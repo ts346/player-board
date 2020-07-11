@@ -1,7 +1,7 @@
 import "../css/Widget.css";
 import "../css/BalancesWidget.css";
 
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Tooltip } from "@material-ui/core";
 import {ApiRequests} from "./ApiRequests";
 import { JsonToTable } from "react-json-to-table";
@@ -27,7 +27,7 @@ export const BalancesWidget = () => {
 
     const [account, set_account] = useState("");
 
-    const [images, set_images] = useState([mike, leo, joao]);
+    const [images] = useState([mike, leo, joao]);
 
     const [profile,set_profile] = useState(not_connected);                                
     
@@ -75,7 +75,7 @@ export const BalancesWidget = () => {
                     <input type="text" name="account" value={account} onChange={handleChange}/>
                 </label>
                 <button className="check_button" onClick={live_update} >check </button>
-                <img src={profile} className="profile_image" ></img>
+                <img src={profile} className="profile_image" alt="random profile pic"></img>
                 <div className="table">
                   <JsonToTable json={tokens} />
                 </div>

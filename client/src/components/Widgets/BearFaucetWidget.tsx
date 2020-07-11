@@ -1,7 +1,7 @@
 
 import "../css/BearFaucetWidget.css";
 import axios from 'axios';
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Tooltip } from "@material-ui/core";
 import bear from "../../assets/bear.png"
 import fox from "../../assets/metamask_fox.png"
@@ -67,10 +67,10 @@ export const BearFaucetWidget = () => {
     
     return <div className="faucet-container">
             <div className='header_faucet'>
-              <img className="topleft_faucet" src={bear} style={{width: '30px', height: '30px'}}></img>
-              <img className="topright_faucet" onClick={connectMetamask} src={fox} style={{width: '30px', height: '30px'}}></img>
+              <img className="topleft_faucet" src={bear} style={{width: '30px', height: '30px'}} alt="bear"></img>
+              <img className="topright_faucet" onClick={connectMetamask} src={fox} style={{width: '30px', height: '30px'}} alt="fox"></img>
               <h1> 100 rawr tokens </h1>
-              <img className="gif_faucet" src={waves} style={{width: '150px', height: '150px'}}></img>
+              <img className="gif_faucet" src={waves} style={{width: '150px', height: '150px'}} alt="gif"></img>
               <button className="button_faucet" onClick={send_tokens} >request rawr tokens</button>
               <Tooltip title="version 0.1, production: joão, leo, mike">
               <div className='credits' >credits</div>

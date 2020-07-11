@@ -9,7 +9,7 @@ export const AudioPlayerWidget = () => {
 
   
     var [i,setI] = useState(0);
-    const [list,set_list] = useState([
+    const [list] = useState([
                   {songName: "dejitaru glow", artist: "a.l.i.s.o.n, crystal cola", url: "http://www.hochmuth.com/mp3/Vivaldi_Sonata_eminor_.mp3"},
                   {songName: "dejitaru glow", artist: "brooo", url: "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"}
                 ]);
@@ -44,7 +44,7 @@ export const AudioPlayerWidget = () => {
   }
   function decrement () {
       set_playing(false);
-      if (i == 0) setI(list.length - 1);
+      if (i === 0) setI(list.length - 1);
       else setI(i-1);
   }
   
