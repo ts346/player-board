@@ -35,7 +35,7 @@ export const BalancesWidget = () => {
 
 
     const live_update = () => {
-      profiles();
+      setRandomProfile();
       setInterval (async function () {await ranking()},5000);
     }
 
@@ -62,7 +62,7 @@ export const BalancesWidget = () => {
       set_account(event.target.value.toString());
     }
 
-    const profiles = () => {
+    const setRandomProfile = () => {
       const random = Math.floor(Math.random() * 3);
       set_profile(images[random]);
     }
