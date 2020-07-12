@@ -10,7 +10,7 @@ import { useDrag } from "react-dnd";
 import { BalancesWidget } from "./BalancesWidget";
 import { BearFaucetWidget } from "./BearFaucetWidget";
 import { TransferWidget } from "./TransferWidget";
-import { AudioPlayerWidget } from "./AudioPlayerWidget";
+//import { AudioPlayerWidget } from "./AudioPlayerWidget";
 
 export interface IWidgetProps {
   type: WidgetTypes;
@@ -59,8 +59,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <BearFaucetWidget />
     case WidgetTypes.bear_transfer:
       return <TransferWidget />
-    case WidgetTypes.audio_player:
-      return <AudioPlayerWidget />
+    /*case WidgetTypes.audio_player:
+      return <AudioPlayerWidget />*/
     // add widget case here for new widget types
     default:
       return null;
